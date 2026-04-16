@@ -1,0 +1,20 @@
+---what is docker or container? ---
+Docker is a tool that lets you package an application with everything it needs to run (code, libraries, dependencies, environment) into a single unit called a container.
+
+---Docker Container---
+• like it a bundle where we pack all necessary data of an app into single thing, that is called as containers.
+• now it would be more easies to transfer app from one device to another (irrespective it is linux, windows, macOS).
+
+---> properties---> 1) portable (can share to any devices).
+                    2) it is lightweight in nature (very less overhead, simple to create/delete, size is very low).
+                    3) if my device is some node x version and i wanna build the two app with d/f version then on single device it is not possible, so i can use is docker, make two container with d/f version i can use those container with according to my app.
+
+---Docker Images---
+• It is not any Images or something it is an executable file used to create docker container. For ex(class->object) or (blueprint->house).
+• Container uses our computer resourses, not images 
+
+---Docker Hub---
+• from here we can access any public docker images  https://hub.docker.com/
+
+---Tags---
+• Note: TAG column shows version or label (e.g., "latest")

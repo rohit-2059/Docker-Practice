@@ -1,0 +1,43 @@
+Docker Commands Reference
+==========================
+
+1. Check Docker Version
+    Command: docker -v
+
+2. Pull Docker Image from Docker Hub
+    Command: docker pull IMAGE_NAME
+    Example: docker pull hello-world
+    Note: Only downloads if image doesn't exist locally
+    Reference: https://hub.docker.com/
+
+3. View All Docker Images on Device
+    Command: docker images
+    Note: TAG column shows version or label (e.g., "latest")
+
+4. Run Docker Container
+    Command: docker run IMAGE_NAME
+    Note: Builds an image into a container
+    Flag: -it for interactive terminal mode
+    Example: docker run -it ubuntu
+
+5. Check All Docker Containers
+    Command: docker ps -a
+    Note: Use -a flag to show all containers (running and stopped)
+    Alternative: docker ps (shows only running)
+
+6. Start Container
+    Command: docker start CONTAINER_ID
+
+7. Stop Container
+    Command: docker stop CONTAINER_ID
+
+8. Remove Docker Image
+    Command: docker rmi IMAGE_NAME
+
+9. Remove Docker Container
+    Command: docker rm CONTAINER_ID
+
+10. Pull Docker Image with Specific Version
+    Command: docker pull IMAGE_NAME:TAG
+    Example: docker pull mysql:8.0
+    Note: Specify version using TAG after colon
