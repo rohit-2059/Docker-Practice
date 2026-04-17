@@ -18,3 +18,26 @@ Docker is a tool that lets you package an application with everything it needs t
 
 ---Tags---
 • Note: TAG column shows version or label (e.g., "latest")
+
+---Environment Variables---
+• To run any container with secured credentials, use the -e flag to setup environment variables
+$ docker run --name some-mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw -d mysql:tag
+
+
+---docker images layer---
+• images consist of many d/f layers 
+• same images with d.f tags can contain multiple same layers also.
+base layer -> layer 1 -> layer 2 ..... ->container
+only container layer is mutable so that we can build new container, rest are immuatable cant change.
+
+---Port binding---
+Command: docker run -p 8080:3306 IMAGE_NAME
+    Note: Maps container port to host port
+    Format: -p HOST_PORT:CONTAINER_PORT
+    Example: docker run -p 8080:3306 mysql
+Explanation: 
+• cant use one port with two or more container
+• HOST_PORT (8080): Port on your machine to access the service
+• CONTAINER_PORT (3306): Port inside the container where service runs
+• Allows external access to containerized services
+• Multiple port bindings: docker run -p 8080:3306 -p 33060:33060 IMAGE_NAME

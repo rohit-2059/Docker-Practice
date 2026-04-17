@@ -1,0 +1,32 @@
+Docker vs Virtual Machines
+
+Key Differences:
+• Docker and VMs are fundamentally different approaches to virtualization
+
+System Architecture (3 Layers):
+    1. Hardware
+    2. Host OS Kernel
+    3. Application Layer
+
+Docker:
+• Virtualizes only the application layer
+• Shares the host OS kernel
+• Lower overhead and resource usage
+• Faster startup times
+
+Virtual Machines:
+• Virtualize both the host OS and application layer
+• Include their own complete OS
+• Higher overhead due to full OS simulation
+
+### Cross-Platform Considerations
+**Virtual Machines:**
+- Can run on any platform because they contain their own OS kernel
+- No dependency on host OS
+
+**Docker:**
+- Primarily Linux-based (most images are Linux-based)
+- Cannot run natively on Windows or macOS
+- **Solution:**
+1) It runs a lightweight virtual machine (VM) in the background
+2) This VM provides a Linux environment on: windows and macOS

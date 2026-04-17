@@ -38,6 +38,27 @@ Docker Commands Reference
     Command: docker rm CONTAINER_ID
 
 10. Pull Docker Image with Specific Version
-    Command: docker pull IMAGE_NAME:TAG
-    Example: docker pull mysql:8.0
-    Note: Specify version using TAG after colon
+     Command: docker pull IMAGE_NAME:TAG
+     Example: docker pull mysql:8.0
+     Note: Specify version using TAG after colon
+
+11. Run in Detached Mode
+    Command: docker run -d IMAGE_NAME
+    Note: Runs in background (default is attach mode)
+    Why used: Allows you to continue using the terminal for other commands while the container runs in the background. Useful for long-running services and servers.
+
+12. Port Binding
+    Command: docker run -p 8080:3306 IMAGE_NAME
+    Note: Maps container port to host port
+    Format: -p HOST_PORT:CONTAINER_PORT
+    Example: docker run -p 8080:3306 mysql
+    Explanation: 
+      - HOST_PORT (8080): Port on your machine to access the service
+      - CONTAINER_PORT (3306): Port inside the container where service runs
+      - Allows external access to containerized services
+      - Multiple port bindings: docker run -p 8080:3306 -p 33060:33060 IMAGE_NAME
+      
+13. TroubleShoot Commands
+docker logs mysql-older-version
+docker exec -it CONT_ID/bin/bash
+docker exec -it CONT_ID/bin/sh

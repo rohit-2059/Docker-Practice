@@ -1,0 +1,49 @@
+Docker Container Networking Guide
+
+Step 1: Create a Network
+docker network create my-network
+
+Step 2: Run MongoDB Container
+docker run -d \
+    --name mongo-container \
+    --network my-network \
+    -p 27017:27017 \
+    mongo
+
+Flags Explained:
+-d                    → Run in background
+--name mongo-container → Container identifier
+--network my-network  → Attach to network
+-p 27017:27017       → Map port
+mongo                → Image name
+
+Step 3: Connect Other Containers
+Place containers on the same network. Use the container name as hostname:
+
+mongodb://mongo-container:27017
+
+Step 4: Run Backend Service
+docker run -d \
+    --name backend \
+    --network my-network \
+    my-flask-app
+
+Flask can now connect to MongoDB using:
+mongodb://mongo-container:27017
+
+Optional: With Authentication
+docker run -d \
+    --name mongo-container \
+    --network my-network \
+    -e MONGO_INITDB_ROOT_USERNAME=admin \
+    -e MONGO_INITDB_ROOT_PASSWORD=secret \
+    -p 27017:27017 \
+    mongo
+
+Connection string:
+mongodb://admin:secret@mongo-container:27017
+
+Best Practices:
+• Use same network for all services
+• Reference containers by name, not localhost
+• Never expose unnecessary ports externally
