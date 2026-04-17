@@ -41,3 +41,8 @@ Explanation:
 • CONTAINER_PORT (3306): Port inside the container where service runs
 • Allows external access to containerized services
 • Multiple port bindings: docker run -p 8080:3306 -p 33060:33060 IMAGE_NAME
+
+---Docker file---
+• It is a text file that contains instructions to build a docker image.
+• It is used to automate the process of creating docker images.
+• It contains a set of instructions that specify how to build the image, such as which base image to use, which files to copy, which commands to run, etc.

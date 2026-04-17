@@ -1,0 +1,33 @@
+# Docker Compose Overview
+
+## What is Docker Compose?
+Docker Compose is a tool that allows you to define and run multiple containers as a single application using a configuration file (docker-compose.yml).
+
+## Why Use Docker Compose?
+Instead of running multiple `docker run` commands manually for each container, you:
+- Define all services and their configurations once in a YAML file
+- Start all containers with a single command
+- Manage dependencies between services easily
+- Simplify local development and testing
+
+## Common Commands
+
+### Start Services
+docker compose -f fileName.yaml up -d
+- Starts containers in detached mode (background)
+- Creates and runs containers defined in the compose file
+
+### Stop Services
+docker compose -f fileName.yaml down
+- Stops and removes all running containers
+- Removes networks created by compose
+
+## Important Notes
+
+### Automatic Networking
+- All containers defined in the same docker-compose.yml file are automatically connected through a default network
+- Containers can communicate with each other using service names as hostnames
+- No need to manually create or configure networks
+
+### Example Service Communication
+Services can reach each other via: `service_name:port`

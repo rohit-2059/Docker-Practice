@@ -1,0 +1,40 @@
+version: '3.8'
+services:
+  mongo:
+    image: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+
+
+
+--------------------
+
+
+YAML = configuration language (used in Docker Compose, Kubernetes)
+Uses key : value format
+Example: image: mongo
+
+Indentation (spaces) defines structure
+No tabs allowed
+Nested blocks created using indentation
+Example: services → mongo → image
+Lists use - (dash)
+
+Example:
+ports:
+  - "27017:27017"
+Every key should have a value (not empty)
+
+Example (correct syntax):
+
+services:
+  mongo:
+    image: mongo
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=pass
+YAML is human-readable and simple
+
